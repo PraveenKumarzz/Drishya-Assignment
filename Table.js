@@ -1,25 +1,4 @@
-console.log("js imported");
-
-var total = document.querySelectorAll('[data-total=price]');
-
-// document.write(expenses.length);
-let sum = 0;
-
-for(let i=0 ; i<total.length ; i++) {
-    sum = sum + parseInt(total[i].textContent);
-}
-
-// document.write(sum);
-
-let tr = document.createElement('tr');
-let td = document.createElement('td');
-td.setAttribute('data-total', 'Total')
-td.innerHTML = sum;
-tr.appendChild(td);
-
-let table = document.getElementsByTagName('table');
-
-table[0].appendChild(tr);
+var sum=0;
 
 function delete_row(no)
 {
@@ -42,4 +21,17 @@ function add_row()
  document.getElementById("new_row2").value="";
  document.getElementById("new_row3").value="";
  
+}
+
+const once=()=>{
+    // sum=0;
+    var table = document.getElementById("data_table") ;sumval=0;
+            
+            for(var i = 1; i < table.rows.length-1; i++)
+            {
+                sumval = sumval + parseInt(table.rows[i].cells[2].innerHTML);
+            }
+            
+            document.getElementById("val").innerHTML = "Sum Value = " + sumval;
+            console.log(sumval);
 }
